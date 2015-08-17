@@ -1,0 +1,37 @@
+background no
+own_window no
+out_to_console yes
+out_to_x no
+total_run_times 0
+use_spacer none
+update_interval 1.0
+short_units yes
+cpu_avg_samples 2
+max_text_width 0
+override_utf8_locale yes
+
+if_up_strictness address
+
+TEXT
+
+[
+{ "full_text": "SSD", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${fs_free /}", "color": "\#b0b0b0" },
+{ "full_text": "MEM", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${mem}/${memmax}", "color": "\#b0b0b0" },
+{ "full_text": "CPU", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${loadavg 2} ${exec sensors -u|awk '/temp1_input/ {print $2}'|sed 's/\..*//'}°C", "color": ${if_match ${loadavg 2} > 3.0}"\#ff9595"${else}"\#b0b0b0"${endif} },
+${if_up wlo1}
+  { "full_text": "W", "separator": false, "separator_block_width": 5 },
+  { "full_text": "${wireless_essid wlo1}(${wireless_link_qual wlo1}/${wireless_link_qual_max wlo1})" },
+${endif}
+{ "full_text": "IP", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${if_up tun0}*VPN * (${texeci 60 curl -4 icanhazip.com})${endif}", "color": "\#12cfc0", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${if_up enp0s25}${addr enp0s25}${endif}${if_up wlo1}${addr wlo1}${endif} (${texeci 60 curl -4 icanhazip.com})", "color": "\#b0b0b0" },
+{ "full_text": "VOL", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${exec amixer get Master -M | grep -oE '[[:digit:]]*%'}", "color": "\#b0b0b0" },
+{ "full_text": "BAT", "separator": false, "separator_block_width": 5 },
+{ "full_text": "${battery_percent}% ${battery_time}" , "color": ${if_match "${battery_percent}" < "20"}"\#ff9595"${else}${if_match "${battery_percent}" < "95"}"\#95ff95"${else}"\#b0b0b0"${endif}${endif} },
+{ "full_text": "${time}", "color": "\#b0b0b0" }
+],
+

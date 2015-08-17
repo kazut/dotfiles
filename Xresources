@@ -1,0 +1,135 @@
+URxvt*.transparent: false 
+!URxvt*.shading: 55
+URxvt*.scrollBar: false
+URxvt*.scrollTtyOutput: false
+URxvt*.scrolWithBuffer: true
+URxvt*.scrollTtyKeypress: true
+!URxvt*.font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+!URxvt*.font: -misc-fixed-medium-r-*-*-13-120-75-75-c-60-iso10646-1
+URxvt*.font: xft:Inconsolata-g:size=10:antialias=true
+URxvt*.boldFont: xft:Inconsolata-g:size=10:antialias=true
+!URxvt*.font: xft:Inconsolatazi4:size=9:antialias=true
+!URxvt*.boldFont: xft:Inconsolatazi4:size=9:antialias=true
+!URxvt*.font: xft:Source Code Pro:size=9:antialias=true
+!URxvt*.boldFont: xft:Source Code Pro Medium:size=9:antialias=true
+URxvt*.loginShell: true
+
+URxvt.keysym.C-minus: command:\033]710;xft:Inconsolata-g:size=10:antialias=true\007\033]711;xft:Inconsolata-g:size=10:antialias=true\007
+URxvt.keysym.C-equal: command:\033]710;-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*\007\033]711;-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*\007
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+! terminal colors ------------------------------------------------------------
+
+
+! tangoesque scheme
+!*background: #111111
+!*foreground: #babdb6
+! Black (not tango) + DarkGrey
+!*color0:  #000000
+!*color8:  #555753
+! DarkRed + Red
+!*color1:  #ff6565
+!*color9:  #ff8d8d
+! DarkGreen + Green
+!*color2:  #93d44f
+!*color10: #c8e7a8
+! DarkYellow + Yellow
+!*color3:  #eab93d
+!*color11: #ffc123
+! DarkBlue + Blue
+!*color4:  #204a87
+!*color12: #3465a4
+! DarkMagenta + Magenta
+!*color5:  #ce5c00
+!*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+!*color6:  #89b6e2
+!*color14: #46a4ff
+! LightGrey + White
+!*color7:  #cccccc
+!*color15: #ffffff
+
+!*background: #151515
+!*foreground:  #c0d0d7 
+!*cursorColor: #a0b0b7
+
+! BLK
+!*color0:   #2a2e31
+!*color8:   #363a3c
+! RED
+!*color1:   #ad3737
+!*color9:   #ff6b6b
+! GRE
+!*color2:   #82a632
+!*color10: #c7f464
+! YEL
+!*color3:   #a6a132
+!*color11: #f4ee64
+! BLU
+!*color4:   #3c4e62
+!*color12: #55687c
+! MAG
+!*color5:   #86263f
+!*color13: #c44d6c
+! CYA
+!*color6:   #268c85
+!*color14: #4ecdc4
+! WHI
+!*color7:   #acbeca
+!*color15: #e0f0f7
+
+!WPORZO : google, default, chalk
+
+#define base00 #151515
+#define base01 #202020
+#define base02 #303030
+#define base03 #505050
+#define base04 #b0b0b0
+#define base05 #d0d0d0
+#define base06 #e0e0e0
+#define base07 #f5f5f5
+#define base08 #fb9fb1
+#define base09 #eda987
+#define base0A #ddb26f
+#define base0B #acc267
+#define base0C #12cfc0
+#define base0D #6fc2ef
+#define base0E #e1a3ee
+#define base0F #deaf8f
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
